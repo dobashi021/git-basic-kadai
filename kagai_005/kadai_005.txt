@@ -1,0 +1,66 @@
+PS C:\Users\user> mkdir git_challenge  
+
+    Directory: C:\Users\user
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          2024/04/12    19:47                git_challenge
+
+PS C:\Users\user> cd .\git_challenge\
+PS C:\Users\user\git_challenge> git init
+Initialized empty Git repository in C:/Users/user/git_challenge/.git/
+
+PS C:\Users\user\git_challenge> echo >> hello_world.txt
+
+cmdlet Write-Output at command pipeline position 1
+Supply values for the following parameters:
+InputObject: 
+PS C:\Users\user\git_challenge> ls
+
+    Directory: C:\Users\user\git_challenge
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          2024/04/12    19:48              2 hello_world.txt
+
+//hello_world.txtに「Hello,world」を1行目に追加
+
+PS C:\Users\user\git_challenge> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+PS C:\Users\user\git_challenge> git add .\hello_world.txt
+PS C:\Users\user\git_challenge>
+PS C:\Users\user\git_challenge> git commit -m "hello_world.txtを追加"
+[main (root-commit) aff2a3f] hello_world.txtを追加
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+PS C:\Users\user\git_challenge>
+PS C:\Users\user\git_challenge> git log --oneline
+aff2a3f (HEAD -> main) hello_world.txtを追加
+PS C:\Users\user\git_challenge>
+
+// hello_world.txt 「こんにちは世界!」二行目を追加
+
+PS C:\Users\user\git_challenge> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\user\git_challenge> git add .\hello_world.txt
+PS C:\Users\user\git_challenge>
+PS C:\Users\user\git_challenge> git commit -m "日本語訳を追記"
+[main e3bee03] 日本語訳を追記
+ 1 file changed, 1 insertion(+)
+PS C:\Users\user\git_challenge>
+PS C:\Users\user\git_challenge> git log --oneline
+e3bee03 (HEAD -> main) 日本語訳を追記
+aff2a3f hello_world.txtを追加
